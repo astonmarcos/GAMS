@@ -1,0 +1,13 @@
+# Importando a biblioteca
+library(dplyr)
+library(ggplot2)
+
+
+
+# Plotando o gráfico com linhas coloridas para cada país
+ggplot(data = `Gastos.dos.governos.latam.em.%.do.pib`, aes(x = Year, y = `Gastos.do.governo`, color = Code)) +
+  geom_line() + # Adiciona linhas para conectar os pontos de dados de cada país
+  geom_text(aes(label = Code), vjust = -0.5) + # Adiciona os rótulos acima das linhas
+  labs(x = "Year", y = "Gastos do governo", title = "Gastos do governo por ano") + # Adiciona títulos aos eixos e ao gráfico
+  theme_minimal() # Aplica um tema minimalista ao gráfico
+
